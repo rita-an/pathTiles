@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="reset.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"/>
+  <title>Path Tiles</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+</head>
+<body>
+  <div id="background">
+    <p class="title bold" id="title_mobile">Path Tiles - Customizing Knitwear with GPS Data</p>
+    <div class="img_slider">
+      <image class="landing_img" src="img/img-1.jpg">
+      <image class="landing_img not_mobile" src="img/img-2.jpg">
+      <image class="landing_img not_mobile" src="img/img-3.jpg">
+    </div>
+    <div class="buttons">
+      <div class="input_container align_b">
+        <input type="file" id="dataInput" class="fileInput" accept=".gpx">
+        <label class="intro_button" for="dataInput">Choose a .gpx file...</label>
+        <image id="FAQ" src="img/q_O.png">
+      </div>
+      <p class="fileMessages align_b" id="noFileMessage">Please upload a .gpx file first.</p>
+      <button class="intro_button align_b blue-button" id="generate">Generate Pattern</button>
+      <button class="intro_button align_b blue-button" onclick="location.href='collection.html';" id="collection">Collection</button>
+      <p class="title bold" id="title">Path Tiles - Customizing Knitwear with GPS Data</p>
+    </div>
+    <div class="intro_container">
+      <p class="p_intro bold" id="about_title">Knitting Coordinates into Patterns</p>
+      <div class="intro_txt">
+        <p class="p_intro">With this project I aim to translate a person's movement into an individual object, which carries the memory of a specific moment. I like to see the movement like a performance, something momentous becoming invisible and untouchable as soon as it is complete. Afterwards, only the memories of what we experienced while moving remain. PathTiles is trying to capture these valuable moments of individual experiences and to transfer them into the physical world of the visible and tactile, creating a deeper relationship between person and object.
+</p>
+        <br>
+        <p class="p_intro">To grasp the invisible tracks people paint on the planet the obvious choice was to work with GPS-Data, which is easy to track or generate using free and open-source tools. I focused on how to translate the data into a knitted object. After experimenting with surfaces, lines, textures and colors I decided that I want to work with patterns that become alive through repetition. Repetition is a fundamental aspect of movement. Whether a person moves from point A to B, perhaps even retracing the same path multiple times, repetition remains a defining feature. The repetition of movement can be seen as an act of creation, shaping a person's experiences and memories. Much like a sculptor shapes a creation, the journey shapes the character.</p>
+        <br>
+        <p class="p_intro">Inspired by this idea, I began to develop a way to translate these journeys into tangible, repeating patterns. To translate this concept of repetition and journey into a visual pattern, I focused on creating a rapport – the smallest repeating unit in a pattern. The PathTiles website features the pattern generator, a digital interface for creating these patterns and rapports from the provided data. The rapport is created by mapping the data on a given surface four times next to each other. Consisting out of four lines drawn on the canvas, the rapport can be now manipulated, by shifting, scaling, mirroring. Repeating the image multiple times on the screen reveals a pattern.
+</p>
+        <br>
+        <p class="p_intro">I wanted to transform those abstract patterns into something tangible and useful, so I designed travel companions as embodiments of personal patterns and memories. The resulting knitted objects offer comfort throughout any journey. Take the scarf, for instance. Featuring pockets at the ends for convenient storage, it eliminates the need to carry a separate bag for small essentials. For those seeking a quiet escape during travel, the balaclava with ear cushions helps reduce the noise of loud surroundings. The bag offers the convenience of a pillow, eliminating the need to pack separately. Finally, the neck pillow wraps around you like a gentle hug, ensuring maximum comfort on long trips.
+</p>
+        <br>
+        <p class="p_intro">For further information and requests, you can reach me at <a href="mailto:rita@andrulyte.studio">rita@andrulyte.studio</a>.</p>
+        <br>
+      </div>
+    </div>
+    <div class="FAQ">
+      <button class="exit" id="exit_faq">X</button>
+      <br>
+      <br>
+      <p class="p_intro bold">How to track .gpx data with your phone?</p>
+      <p class="p_intro">For Android devices, you can use the free app called <a class="faq_link" target="_blank"href="https://play.google.com/store/apps/details?id=com.ilyabogdanovich.geotracker&hl=de&gl=US">Geo Tracker – GPS Tracker</a> from the Play Store. For Apple devices, you can use the free app called <a class="faq_link" target="_blank"href="https://apps.apple.com/de/app/open-gpx-tracker/id984503772">Open GPX Tracker</a> from the App Store. Remember to save your tracked routes in the .gpx format, so it works properly with the pathTiles Generator.</p>
+      <br>
+      <p class="p_intro bold">How to manipulate GPS data?</p>
+      <p class="p_intro">You can use the website <a class="faq_link" target="_blank"href="https://gpx.studio/">gpx.studio</a> to manipulate your GPS data (e.g., if you forgot to stop your tracking) and export it in the .gpx format. </p>
+      <br>
+      <p class="p_intro bold">How to generate .gpx data?</p>
+      <p class="p_intro">If you cannot track the desired route at the moment, you can use the website <a class="faq_link" target="_blank"href="http://map.project-osrm.org/">map.project-osrm.org</a> to generate and save GPS data.</p>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="container" id="container">
+    <div id="settings">
+      <div class="Colors">
+        <p class="col_title">Material & Colors</p>
+        <div class="col">
+          <div class="color_txt">
+            <label class="material_input"><input type="radio" id="cottonCol" name="materialType" value="cotton">100% Cotton</label>
+            <label class="material_input"><input type="radio" id="merinonCol" name="materialType" value="merino">100% Merino</label>
+          </div>
+          <div class="color_txt">
+            <p class="color_p">Background:</p>
+            <p class="color_p">Pattern:</p>
+          </div>
+          <div class="color_txt">
+            <div class="full"><input type="text" id="color1Picker" value="#ffffff" data-coloris></div>
+            <div class="full"><input type="text" id="color2Picker" value="#216bb0" data-coloris></div>
+          </div>
+        </div>
+      </div>
+      <div class="Sliders">
+        <ul class="slider_text">
+          <li>Start X</li>
+          <li>Start Y</li>
+          <li>Finish X</li>
+          <li>Finish Y</li>
+        </ul>
+        <div id="sliders"></div>
+      </div>
+      <div class="Checks">
+        <div class="mirror_txt"><p>Mirror</p></div>
+        <div id="checks">
+          <div class="checkGroup">
+            <img class="mirror_img" src="img/rapport01.png">
+            <div class="checkboxGroup">
+              <p class="check_item">Y</p>
+              <p class="check_item">X</p>
+              <p class="check_item">XY</p>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+            </div>
+          </div>
+          <div class="checkGroup">
+            <img class="mirror_img" src="img/rapport02.png">
+            <div class="checkboxGroup">
+              <p class="check_item">Y</p>
+              <p class="check_item">X</p>
+              <p class="check_item">XY</p>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+            </div>
+          </div>
+          <div class="checkGroup">
+            <img class="mirror_img" src="img/rapport03.png">
+            <div class="checkboxGroup">
+              <p class="check_item">Y</p>
+              <p class="check_item">X</p>
+              <p class="check_item">XY</p>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+            </div>
+          </div>
+          <div class="checkGroup">
+            <img class="mirror_img" src="img/rapport04.png">
+            <div class="checkboxGroup">
+              <p class="check_item">Y</p>
+              <p class="check_item">X</p>
+              <p class="check_item">XY</p>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+              <div class="check_item myCheckbox"><input type="checkbox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="set_save">
+        <button class="saveButton" id="b_save">Save</button>
+      </div>
+      <div class="circle"><img id="scroll" src="img/pfeil_B.png"/></div>
+    </div>
+    <div class="prev_con">
+      <div id="preview"></div>
+    </div>
+  </div>
+  <div id="canvas-c"></div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/togeojson/0.16.0/togeojson.min.js" integrity="sha512-tGbo6fmjjGoMjPcSMmwn2kdL791LM73K/8dUjCdO91fBBF26AXG7/DKFcVHfOieY78XT2hl0rJkbM0GUVaPcjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" integrity="sha512-d6sc8kbZEtA2LwB9m/ck0FhvyUwVfdmvTeyJRprmj7Wg9wRFtHDIpr6qk4g/y3Ix3O9I6KHIv6SGu9f7RaP1Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="main.js"></script>
+</body>
+</html>
